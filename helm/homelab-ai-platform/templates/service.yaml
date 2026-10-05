@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homelab-ai-platform
+spec:
+  selector:
+    app: homelab-ai-platform
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
